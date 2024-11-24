@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Plan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Fitness Plan</h1>
+        <p>Select a template to get started:</p>
+
+        <div class="template-selection">
+            <div class="template" id="men-template" onclick="window.location.href='workout-men.html'">
+                <img src="Assets/Mens.jpeg" alt="Men's Workout">
+                <h2>Men's Workout</h2>
+            </div>
+
+            <div class="template" id="women-template" onclick="window.location.href='workout-women.html'">
+                <img src="Assets/women.jpeg" alt="Women's Workout">
+                <h2>Women's Workout</h2>
+            </div>
+
+            <div class="template" id="plan-template" onclick="window.location.href='plan-your-workout.html'">
+                <img src="Assets\background2.jpg" alt="Plan Your Workout">
+                <h2>Plan Your Workout</h2>
+            </div>
+        </div>
+
+        <!-- Link to Login Page -->
+        <div class="login-link">
+            <p><a href="login.html">Login to your account</a></p>
+        </div>
+
+        <!-- Feedback form added for usability testing -->
+        <div class="feedback-form">
+            <h2>Provide Your Feedback</h2>
+            <form id="feedbackForm">
+                <label for="feedback">What do you think about our website?</label><br>
+                <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Functionality Testing Script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Test 1: Check if the "Men's Workout" template is present
+            const menTemplate = document.getElementById('men-template');
+            if (menTemplate) {
+                console.log("Men's template exists.");
+            } else {
+                console.error("Men's template is missing.");
+            }
+
+            // Test 2: Check if the "Women's Workout" template is present
+            const womenTemplate = document.getElementById('women-template');
+            if (womenTemplate) {
+                console.log("Women's template exists.");
+            } else {
+                console.error("Women's template is missing.");
+            }
+
+            // Test 3: Check if the "Plan Your Workout" template is present
+            const planTemplate = document.getElementById('plan-template');
+            if (planTemplate) {
+                console.log("Plan template exists.");
+            } else {
+                console.error("Plan template is missing.");
+            }
+
+            // Test 4: Verify the title text is as expected
+            const titleText = document.querySelector('h1').innerText;
+            if (titleText === 'Choose Your Fitness Plan') {
+                console.log("Title is correct.");
+            } else {
+                console.error("Title is incorrect.");
+            }
+        });
+
+        // Feedback Form Submission Script
+        document.getElementById('feedbackForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const feedback = document.getElementById('feedback').value;
+            console.log('User Feedback:', feedback); // Log feedback for now, or send it to your server
+            alert('Thank you for your feedback!');
+        });
+    </script>
+</body>
+</html>

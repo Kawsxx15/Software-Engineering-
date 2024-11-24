@@ -1,0 +1,124 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('Assets/background2.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the entire image is visible */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+/* Logo in the top right corner */
+.logo {
+    position: relative;
+    top: 20px;
+    right: 20px;
+}
+
+.logo img {
+    width: 190px; /* Adjust based on your logo size */
+    height: auto;
+}
+
+/* Container for the workout library */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    text-align: center;
+    position: relative; /* Allow logo to be positioned on top */
+}
+
+h1 {
+    color: #fff; /* White text for the heading */
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Carousel Styles */
+.carousel {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 20px 0;
+}
+
+.template {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 0 15px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+
+/* Image styles inside the template */
+.template img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text in the template */
+.template h2 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hover effect for templates with perspective and rotation */
+.template {
+    transition: transform 0.3s ease;
+}
+
+.template:hover {
+    transform: perspective(500px) rotateX(5deg) rotateY(5deg); /* 3D hover effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background-color: rgba(255, 255, 255, 0.9); /* Lighter background on hover */
+}
+
+/* Automatic Carousel Scroll */
+@keyframes auto-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.carousel {
+    animation: auto-scroll 20s linear infinite;
+}
+
+/* Optional styles for responsiveness */
+@media (max-width: 768px) {
+    .carousel {
+        justify-content: center;
+    }
+
+    .template {
+        width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .template {
+        width: 120px;
+    }
+}
